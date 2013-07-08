@@ -1,7 +1,10 @@
-  Introduction
+Introduction
 ------------------
 
 My name is Elita Lobo. (elita15)
-Student of NIT Durgapur.
-Dgplug summer training helps us to enrich our knowledge about foss , thus helping us to contribute to the same in future. So i am very  grateful to the mentor for his time and patience .Dgplug summer training has been amazing and fun till date.
+I am a student of NIT Durgapur.
 
+*Views about Dgplug Summer Training*
+
+Dgplug Summer Training has provided us a unique opportunity to enrich our knowledge about FOSS and  hence helps  us to contribute to it in      future.Dgplug training has been an interesting and fun learning experience till date.I am  thankful to the mentor for his patience and number 
+of hours he dedicates in training us everyday.
