@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 import sys 
 def readfile():#defining readfile function
-   s=open("/proc/mounts") #opens he file mount.py
+   s=open("/proc/mounts") #opens the file mount.py
    f=s.read() #reads the content of the file /proc/mounts
    z=f.split("\n")# splits the output into individual lines
-   changefile(z)# caling changefile function
+   changefile(z)# calling changefile function
    s.close()
 def changefile(z):#defining changefile function
    p=len(z)#counts no of lines
