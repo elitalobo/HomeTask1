@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 import sys 
-def readfile():
+def readfile():#defining readfile function
    s=open("/proc/mounts") #opens he file mount.py
    f=s.read() #reads the content of the file /proc/mounts
    z=f.split("\n")# splits the output into individual lines
-   changefile(z)
+   changefile(z)# caling changefile function
    s.close()
-def changefile(z):
-   p=len(z)
-   i=1
+def changefile(z):#defining changefile function
+   p=len(z)#counts no of lines
+   i=1#initiation
    while i<p:
        a=z[i].split(" ")# splits each line into list of words
        a.insert(1,"on")# inserts "on" in 1st position
@@ -21,7 +21,7 @@ def changefile(z):
        print w#prints each line
        i=i+1#increaments i to go to next line
 
-if __name__ == '__main__':
+if __name__ == '__main__':#to open readfile
    readfile()
    sys.exit(0)
   
