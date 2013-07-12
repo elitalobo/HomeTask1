@@ -1,4 +1,4 @@
-Mount
+Mount v2
 ----------
 
 **Task**
@@ -7,10 +7,28 @@ Write a file mount.py which when executed as ./mount.py gives the same output as
 Code Description
 --------------------
 
-Basically we first open and read the mounts file in the proc directory which inturn is present in the root directory.This is done using 
-s=open("/proc/mounts")  command followed by f=s.read() . By default the file content is not the same as output obtained by giving mount command on the CLI. So we need to assign the file contents to a variable and then manupulate it using basic python commands so as to achieve the desired output. 
+**readfile Function**
 
-The contents of the file which is read by a variable is first split into individual lines using f.split("\n"). Each line is  split into list of words using z[i].split(" "). Each list of words is then manupulated using insert() method , to insert words in the list, replace() method, to replace words or parts of words in the list, del() method, to delete words   from the list and append(), method to add words to the end of the list. Lastly we use join() method to join all the words in the list to form lines which is then printed as output. The /proc/mounts file is  closed at the end. 
+#. s=open("/proc/mounts")     opens  the file mount.py
+#. f=s.read()                 reads the content of the file /proc/mounts
+#. z=f.split("\n")            splits  the output into individual lines
+#. changefile(z)              calls the  changefile function
+#. s.close()                  close /proc/mount file
+
+**changefile Function**
+
+#.  p=len(z)                 counts no of lines
+#.  a=z[i].split(" ")        splits each line into list of words
+#.  a.insert(1,"on")         inserts "on" in 1st position 
+#.  a.insert(3,"type")       inserts "type" in 3rd position
+#.  a.insert(5,"(")          inserts open brackett in 5th position
+#.  del a[-2]                deletes the second last word
+#.  del a[-1]                deletes the last word
+#.  a.append(")")            appends a closed bracket at the end of the list 
+#.  w=" ".join(a)            joins words in the list by " "
+#.  print w                  prints each line
+
+
 
 **link to the code**
 ` link <https://github.com/elitalobo/HomeTask1/tree/master/mount>`_
