@@ -42,5 +42,8 @@ Code for setup.py file
 **link**
 `link <https://github.com/elitalobo/HomeTask1>`_
 
+**link to the project**
+
+`link1 <https://testpypi.python.org/pypi/elitashell/0.3.2>`_
 
 
