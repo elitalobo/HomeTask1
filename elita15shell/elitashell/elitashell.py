@@ -29,9 +29,9 @@ class Application(Cmd):
        def do_stock(self,line):
             Stock(line)
             # prints stock value on giving the command stock <NASDAQ_SYMBOL>
-       def main():
-            app = Application() #calls Application() function
-            app.cmdloop()
+def main():
+       app = Application() #calls Application() function
+       app.cmdloop()
 
  
 if __name__ == '__main__':
