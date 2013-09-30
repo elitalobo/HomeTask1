@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+{% block body %}
+{% endblock %}
+{% block Posts %}
+ 
+   {% if session.logged_in %}
+     <form action="{{url_for('add_entry')}}" method=POST class=add-entry>
+     <dl>
+     <dt>Title:
+     <dd><input type=text size=30 name=title>
+     <dt>Text:
+     <dd><textarea name=text rows=5 cols=40></textarea>
+     <dt>Password:
+     <dd><input type=text size=30 name=password> 
+     <dd><input type=submit value=share>
+     </dl>
+     </form>
+   {% endif %}
+    <script>
+   function myfunction()
+   {
+    alert("hello");
+   }
+   </script>
+{% for entry in entries %}
+  <li><h2 id="entry">{{entry.title|safe}} </h2>
+  <li><button onclick='myfunction()'>read</button>
+  
+   <li><p id="para" contenteditable="true" spellcheck="true">{{entry.text|safe}}</p>
+{% else %}
+  <li><em>No entries here so far</em>
+{% endfor %}
+</ul>
+{% for message in get_flashed_messages() %}
+  <div>{{message}}</div>
+{% endfor %}
+{% endblock %}
+
+
