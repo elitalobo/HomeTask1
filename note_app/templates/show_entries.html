@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block Titles %}
+{% endblock %}
+{% block body %}
+{% endblock %}
+{% block Posts %}
+   {% if session.logged_in %}
+     <form action="{{url_for('add_entry')}}" method=POST class=add-entry>
+     <dl>
+     <dt>Title:
+     <dd><input id="title" type=text size=30 name=title>
+     <dt>Text:
+     <dd><textarea id="text" name=text rows=5 cols=40></textarea>
+     <dt>Password:
+     <dd><input id="passwd" type=text size=30 name=password> 
+     <dd><input type=submit onclick='save_text()' value=share>
+     </dl>
+     </form>
+   {% endif %}
+   <div id="tester">
+   {% for entry in entries %}
+     <li><h2 id="entry">{{entry.title|safe}}</h2>
+     <form action="{{url_for('post')}}" method=POST>
+     <dl>
+     <dt>PASSWORD:
+     <dd><input type=password name=passwrd size=10>
+     <dd><input type=hidden  name="id" value={{entry.id|safe}}>
+     <dd><input type=submit  name={{entry.id|safe}} value="Read!">
+     </dl>
+     </form>
+   </div>
+   {% else %}
+     <li><em>No entries here so far</em>
+   {% endfor %}
+</ul>
+{% for message in get_flashed_messages() %}
+  <div>{{message}}</div>
+{% endfor %}
+{% endblock %}
+
+
