@@ -1,0 +1,43 @@
+<!doctype html>
+ <html>
+ <head>
+<script src="jquery-1.10.2.min.js"></script>
+<script>
+$(document.ready(function(){
+$("button".click(function(){
+$alert(this.id);
+});
+});
+</script>
+ <style>
+ body{ background-image:url(images.gif); 
+background-size: 100% 100%; } 
+#entry{ color:yellow; 
+text-align:left; 
+font-size:40px;
+ text-decoration:underline; 
+background-color:green; 
+} 
+#para{ font-family:"Times New Roman";
+ font-size:20px; 
+color:green;
+ background-color:red; } 
+</style>
+ <title>Flask</title>
+{% block Titles %}
+{% endblock %}
+ </head> 
+<body>
+ <h1>Flaskr</h1> 
+{% if not session.logged_in %}
+ <a href="{{ url_for('login') }}">LOGIN</a>
+ {% else %}
+ <a href="{{ url_for('logout') }}">LOGOUT</a>
+ {% endif %} 
+{% block body %}
+<img src="/static/images.jpeg" alt="images">
+ {% endblock %} 
+{% block Posts %} 
+{% endblock %}
+ </body> 
+</html>
