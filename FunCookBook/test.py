@@ -1,4 +1,6 @@
 from BeautifulSoup import BeautifulSoup 
+#from pyttsk import pyttsk
+
 #imports BeautifulSoup package used for for parsing through the webpage and retrieving required contents.
 
 import urllib2 # imports urllib2 required to open the webpage corresponding through the url passed to it.
@@ -7,6 +9,9 @@ tree = {}
 import sys
 def Planet_parser():
   print "                MINI BENGALI COOKBOOK              "+"\n"
+  #engine = pyttsx.init()
+  #engine.say("Mini Benagli CookBook")
+  #engine.runAndWait()
   print "Loading list of Bengali dishes..."
   x=16
   e=1
@@ -41,6 +46,7 @@ def Planet_parser():
          break
     if f==0: 
       print "Dish not found! Please enter the name of the dish again."
+      dish = raw_input ("Enter the name of the dish you would like to cook ")
   print dishname.upper() 
   print "\n"+"INGREDIENTS:"+"\n"
   url =  dishlink
