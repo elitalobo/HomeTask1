@@ -1,10 +1,9 @@
-==============
+================
 Fun CookBook
-=============
+================
 
-------------
+
 Description:
-------------
 
 You need to install BeautifulSoup and Requests module before using this application.
 To run this application type :
